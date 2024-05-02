@@ -29,10 +29,6 @@ const NAV_ITEMS = [
     label: 'Consultants',
     href: '/consultants'
   },
-  {
-    label: 'Page 2',
-    href: '/page2',
-  },
 ];
 
 
@@ -46,7 +42,7 @@ export const Navbar = () => {
         color={'gray.600'}
         minH={'60px'}
         py={2}
-        px={2}
+        px={4}
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={'gray.200'}
@@ -61,11 +57,12 @@ export const Navbar = () => {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={1} justify={{ base: 'center', md: 'start' }}>
+        <Flex flex={1} justify={{ base: 'center', md: 'start' }} justifyContent={'space-around'}>
           <Button as={'a'} variant={'link'} href={'/'}>
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
+              fontSize={'lg'}
               color={'gray.800'}>
               Logo
             </Text>
@@ -122,12 +119,14 @@ const DesktopNav = () => {
                 as="a"
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
+                fontSize={'lg'}
+                fontWeight={400}
                 color={linkColor}
                 _hover={{
                   textDecoration: 'none',
                   color: linkHoverColor,
+                  bg: 'gray.100',
+                  borderRadius: 'xl'
                 }}>
                 {navItem.label}
               </Box>
@@ -173,7 +172,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
             fontWeight={500}>
             {label}
           </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
+          <Text fontSize={'lg'}>{subLabel}</Text>
         </Box>
         <Flex
           transition={'all .3s ease'}
@@ -214,7 +213,7 @@ const MobileNavItem = ({ label, children, href }) => {
         _hover={{
           textDecoration: 'none',
         }}>
-        <Text fontWeight={600} color={'gray.600'}>
+        <Text fontSize={'lg'} fontWeight={500} color={'gray.600'}>
           {label}
         </Text>
         {children && (
