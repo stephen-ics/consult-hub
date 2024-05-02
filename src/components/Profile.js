@@ -3,7 +3,7 @@ import React from 'react';
 
 const Profile = () => {
   return (
-    <Card maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Card maxW="sm" borderRadius="lg" overflow="hidden" color='gray.800'>
       <AspectRatio ratio={4 / 3}>
         <Image src="https://via.placeholder.com/150" alt="Profile Picture" objectFit="cover" />
       </AspectRatio>
