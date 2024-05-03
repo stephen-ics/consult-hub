@@ -10,7 +10,7 @@ const Landing = () => {
             <Flex direction={'column'}>
               <Heading fontSize={'8xl'}>ConsultHub</Heading>
               <Text fontSize={'4xl'} mb={'10'} color='gray.600'>Small Description</Text>
-              <Button minH={16}>Get Started</Button>
+              <Button as={'a'} href={'/consultants'} minH={16}>Get Started</Button>
             </Flex>
           </Box>
           <Box>
