@@ -4,17 +4,22 @@ import Profile from '../components/Profile';
 
 const Consultants = () => {
   return (
-    <Flex justifyContent={'center'}>
-      <Container maxW="65%" mt='10'>
-        <Heading mb='7' textAlign={{base: 'center', md: 'left'}} color='gray.800' fontSize={{base: '3xl', md:'4xl'}}>Recommendations</Heading>
-        <Divider orientation='horizontal' />
-        <SimpleGrid columns={[1, 2, 4, 5]} gap={6} minChildWidth={{base: '300px', md: '400'}} my={6}>
-          <Profile id={1}/>
-          <Profile id={2}/>
-          <Profile id={3}/>
-          <Profile id={4}/>
-          <Profile id={5}/>
-          <Profile id={6}/>
+    <Flex justifyContent="center" align="center" minHeight="100vh" py="5">
+      <Container maxW="container.xl" mt="5">
+        <Heading
+          mb="5"
+          textAlign="center"
+          color="gray.800"
+          fontSize={{ base: '2xl', md: '4xl' }}
+          fontWeight="bold"
+        >
+          Recommendations
+        </Heading>
+        <Divider orientation="horizontal" mb="6" />
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing="6">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <Profile key={index} id={index + 1} />
+          ))}
         </SimpleGrid>
       </Container>
     </Flex>
@@ -22,3 +27,11 @@ const Consultants = () => {
 };
 
 export default Consultants;
+
+// Accomplishments: string
+// Full Name: string
+// Title (E.g Student @ x University)
+// I will... Short description
+// Card Subtitle
+// Card Description
+// Image
