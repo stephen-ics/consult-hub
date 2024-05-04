@@ -29,10 +29,10 @@ const NAV_ITEMS = [
     label: 'Consultants',
     href: '/consultants'
   },
-  {
-    label: 'Checkout',
-    href: '/checkout'
-  },
+  // {
+  //   label: 'Checkout',
+  //   href: '/checkout'
+  // },
 ];
 
 

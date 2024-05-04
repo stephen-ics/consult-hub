@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion'
 import Landing from './pages/Landing';
 import Consultants from './pages/Consultants';
 import ConsultantDetail from './pages/ConsultantDetail';
+import Checkout from './pages/Checkout'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path='/' element={<Landing />} />
                 <Route path='/consultants' element={<Consultants />} />
                 <Route path='/consultants/:id' element={<ConsultantDetail />} />
+                <Route path='/checkout/:id' element={<Checkout />} />
               </Routes>
             </AnimatePresence>
           </BrowserRouter>
