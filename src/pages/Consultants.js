@@ -2,6 +2,8 @@ import { Box, Container, Divider, Flex, Heading, SimpleGrid, Text } from '@chakr
 import React from 'react';
 import Profile from '../components/Profile';
 
+import consultantsData from '../data/consultants.json'
+
 const Consultants = () => {
   return (
     <Flex justifyContent="center" align="center" minHeight="100vh" py="5">
@@ -17,8 +19,18 @@ const Consultants = () => {
         </Heading>
         <Divider orientation="horizontal" mb="6" />
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing="6">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <Profile key={index} id={index + 1} />
+        {consultantsData.map((consultant, index) => (
+            <Profile
+              key={consultant.consultant_id}
+              id={consultant.consultant_id}
+              fullName={consultant.full_name}
+              subtitle={consultant.subtitle}
+              accomplishments={consultant.accomplishments}
+              service={consultant.service}
+              serviceDescription={consultant.service_description}
+              image={consultant.image}
+              price={consultant.price}
+            />
           ))}
         </SimpleGrid>
       </Container>
@@ -27,12 +39,3 @@ const Consultants = () => {
 };
 
 export default Consultants;
-
-// Accomplishments: string
-// Full Name: string
-// Title (E.g Student @ x University)
-// I will... Short description
-// Card Subtitle
-// Card Description
-// Image
-// Link: Calendly link

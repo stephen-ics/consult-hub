@@ -1,0 +1,73 @@
+[
+    {
+      "consultant_id": 1,
+      "full_name": "Emma Johnson",
+      "subtitle": "Harvard University, Financial Advisor",
+      "accomplishments": [
+        "10+ years in financial consulting",
+        "Published 5+ papers on financial strategies",
+        "Guest speaker at 2020 Finance Conference"
+      ],
+      "service": "1 hour consulting",
+      "service_description": "Expert advice on personal finance and investment strategies",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg",
+      "price": 10000
+    },
+    {
+      "consultant_id": 2,
+      "full_name": "James Lee",
+      "subtitle": "MIT, AI Specialist",
+      "accomplishments": [
+        "Developed AI for trading systems",
+        "Lead AI researcher at TechCorp",
+        "Holder of 5 patents in machine learning"
+      ],
+      "service": "1 hour consulting",
+      "service_description": "Consultation on AI integration and machine learning projects",
+      "image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "price": 15000
+    },
+    {
+      "consultant_id": 3,
+      "full_name": "Sophia Martinez",
+      "subtitle": "Stanford University, Product Manager",
+      "accomplishments": [
+        "Launched successful apps in finance and education",
+        "10 years of experience in Silicon Valley",
+        "Keynote speaker at Global Tech Symposium"
+      ],
+      "service": "1 hour consulting",
+      "service_description": "Guidance on product development and management in tech startups",
+      "image": "https://randomuser.me/api/portraits/women/68.jpg",
+      "price": 12000
+    },
+    {
+      "consultant_id": 4,
+      "full_name": "Michael Brown",
+      "subtitle": "University of Cambridge, Historian",
+      "accomplishments": [
+        "Published author of three history books",
+        "Expert in European medieval history",
+        "Frequent contributor to historical documentaries"
+      ],
+      "service": "1 hour consulting",
+      "service_description": "Insights into European history and academic research",
+      "image": "https://randomuser.me/api/portraits/men/83.jpg",
+      "price": 8000
+    },
+    {
+      "consultant_id": 5,
+      "full_name": "Isabella Smith",
+      "subtitle": "UCLA, Marketing Expert",
+      "accomplishments": [
+        "Over 15 years of marketing experience",
+        "Specialist in digital marketing strategies",
+        "Worked with Fortune 500 companies"
+      ],
+      "service": "1 hour consulting",
+      "service_description": "Expert marketing advice tailored to your business needs",
+      "image": "https://randomuser.me/api/portraits/women/50.jpg",
+      "price": 9500
+    }
+  ]
+  
