@@ -67,8 +67,8 @@ export const Navbar = () => {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               fontSize={'lg'}
-              color={'gray.800'}>
-              Logo
+              color={'green.700'}>
+              ConsultHub
             </Text>
           </Button>
 

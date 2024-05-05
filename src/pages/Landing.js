@@ -1,6 +1,8 @@
 import { Box, Button, Container, Flex, Heading, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
+import ConsultHubLogo from '../'
+
 const Landing = () => {
   const buttonSize = useBreakpointValue({ base: 'md', md: 'lg' }); // Responsive button size
   const headingSize = useBreakpointValue({ base: '6xl', md: '8xl' }); // Responsive heading size
@@ -29,7 +31,7 @@ const Landing = () => {
         </Box>
         <Box flex="1" display={{ base: 'flex', md: 'block' }} justifyContent={{ base: 'center', md: 'normal' }}>
           <Image 
-            src="https://via.placeholder.com/500x500" 
+            src="/ConsultHubLogo.png" 
             alt="Consultation" 
             objectFit="cover" 
             borderRadius="full" 

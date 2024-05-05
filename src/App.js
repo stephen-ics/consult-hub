@@ -8,6 +8,8 @@ import Landing from './pages/Landing';
 import Consultants from './pages/Consultants';
 import ConsultantDetail from './pages/ConsultantDetail';
 import Checkout from './pages/Checkout'
+import OrderSucess from './pages/OrderSucess'
+import OrderCancelled from './pages/OrderCancelled'
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
                 <Route path='/consultants' element={<Consultants />} />
                 <Route path='/consultants/:id' element={<ConsultantDetail />} />
                 <Route path='/checkout/:id' element={<Checkout />} />
+                <Route path='/order-cancelled/:id' element={<OrderSucess />} />
+                <Route path='/order-success/:id' element={<OrderCancelled />} />
               </Routes>
             </AnimatePresence>
           </BrowserRouter>
