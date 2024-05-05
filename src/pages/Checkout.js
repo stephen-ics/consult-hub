@@ -1,65 +1,47 @@
 import React from 'react';
-import { Box, Button, Flex, FormControl, FormLabel, Heading, Image, Input, Stack, Text } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
 const Checkout = () => {
-  return (
-    <Flex minH="80vh" p={5} alignItems="start" justifyContent="space-around" wrap="wrap">
-      {/* Left side: Billing and Payment Forms */}
-      <Box w={{ base: "100%", lg: "60%" }} p={5} shadow="md" borderWidth="1px" borderRadius="lg">
-        <Flex direction="column" gap={10}>
-          {/* Billing Information Form */}
-          <Box>
-            <Heading size="lg" mb={4}>Billing Information</Heading>
-            <Stack spacing={3}>
-              <FormControl id="firstName">
-                <FormLabel>First Name</FormLabel>
-                <Input placeholder="Enter your first name" />
-              </FormControl>
-              <FormControl id="lastName">
-                <FormLabel>Last Name</FormLabel>
-                <Input placeholder="Enter your last name" />
-              </FormControl>
-              <FormControl id="email">
-                <FormLabel>Email Address</FormLabel>
-                <Input type="email" placeholder="Enter your email" />
-              </FormControl>
-            </Stack>
-          </Box>
-          {/* Payment Options Form */}
-          <Box>
-            <Heading size="lg" mb={4}>Payment Options</Heading>
-            <Stack spacing={3}>
-              <FormControl id="cardName">
-                <FormLabel>Name on Card</FormLabel>
-                <Input placeholder="Name as it appears on card" />
-              </FormControl>
-              <FormControl id="cardNumber">
-                <FormLabel>Credit Card Number</FormLabel>
-                <Input placeholder="1234 5678 9101 1121" />
-              </FormControl>
-              <Flex gap={2}>
-                <FormControl id="expiryDate" flex="1">
-                  <FormLabel>Expiry Date</FormLabel>
-                  <Input placeholder="MM/YY" />
-                </FormControl>
-                <FormControl id="cvv" flex="1">
-                  <FormLabel>CVV</FormLabel>
-                  <Input placeholder="CVV" />
-                </FormControl>
-              </Flex>
-            </Stack>
-          </Box>
-        </Flex>
-      </Box>
+  // Function to handle the checkout process
+  const handleCheckout = async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    try {
+      // Data to be sent to the server
+      const itemData = {
+        title: "Vintage Camera",
+        image_url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        price: 15000 // $150.00
+      };
 
-      {/* Right side: Package Details Card */}
-      <Flex direction="column" w={{ base: "100%", lg: "30%" }} alignItems="center" p={5} shadow="md" borderWidth="1px" borderRadius="lg" mt={{ base: 5, lg: 0 }}>
-        <Image src="https://via.placeholder.com/150" alt="Consulting Service" boxSize="150px" mb={4} />
-        <Text fontSize="xl" fontWeight="bold">1-Hour Consulting Service</Text>
-        <Text fontSize="md" color="gray.600">Detailed description of the package benefits and features.</Text>
-        <Button mt={4} colorScheme="teal" size="lg">Confirm and Pay</Button>
-      </Flex>
-    </Flex>
+      // Making the API call to your backend
+      const response = await fetch('http://127.0.0.1:8000/checkout/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(itemData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Redirect to the Stripe checkout page
+        window.location.href = data.url;
+      } else {
+        throw new Error('Failed to create checkout session');
+      }
+    } catch (error) {
+      console.error('Checkout Error:', error);
+    }
+  };
+
+  return (
+    <div>
+      <Button colorScheme="blue" onClick={handleCheckout}>
+        Start Checkout
+      </Button>
+    </div>
   );
 };
 
